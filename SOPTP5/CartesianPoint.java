@@ -34,4 +34,21 @@ public class CartesianPoint {
     public toString(){
         return "(x = " + x + "," + "y = " +y + ")";
     }
+
+
+    // Tâche 9 : Implémenter deux méthodes PolarPoint toPolar() dans la classe CartesianPoint qui permet de passer d’un CartesianPoint à un PolarPoint
+    public PolarPoint toPolar() {
+    double r = Math.sqrt(x * x + y * y);
+    double theta = Math.atan2(y, x);
+    return new PolarPoint(r, theta);
+    }
+
+    // Tâche 10 : Compléter les classes CartesianPoint
+
+    public CartesianPoint rotate(double alpha) {
+        double newX = x * Math.cos(alpha) - y * Math.sin(alpha);
+        double newY = x * Math.sin(alpha) + y * Math.cos(alpha);
+        return new CartesianPoint(newX, newY);
+
+ 
 }
